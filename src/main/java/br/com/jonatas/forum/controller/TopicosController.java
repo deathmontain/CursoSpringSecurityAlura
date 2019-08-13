@@ -1,9 +1,9 @@
 package br.com.jonatas.forum.controller;
 
-import br.com.jonatas.forum.controller.Dto.DetalheDoTopicoDto;
-import br.com.jonatas.forum.controller.Dto.TopicoDto;
-import br.com.jonatas.forum.controller.Form.AtualizacaoTopicoForm;
-import br.com.jonatas.forum.controller.Form.TopicoForm;
+import br.com.jonatas.forum.controller.dto.DetalheDoTopicoDto;
+import br.com.jonatas.forum.controller.dto.TopicoDto;
+import br.com.jonatas.forum.controller.form.AtualizacaoTopicoForm;
+import br.com.jonatas.forum.controller.form.TopicoForm;
 import br.com.jonatas.forum.model.Topico;
 import br.com.jonatas.forum.repository.CursoRepository;
 import br.com.jonatas.forum.repository.TopicoRepository;
@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -32,8 +33,8 @@ public class TopicosController {
 
     @GetMapping
     public Page<TopicoDto> lista(@RequestParam(required = false) String nomeCurso, @RequestParam int pagina,
-                                 @RequestParam int qtd){
-        Pageable paginacao = PageRequest.of(pagina, qtd);
+                                 @RequestParam int qtd, @RequestParam String ordenacao){
+        Pageable paginacao = PageRequest.of(pagina, qtd, Sort.Direction.ASC, ordenacao);
 
         if (nomeCurso == null){
             Page<Topico> topicos = topicoRepository.findAll(paginacao);

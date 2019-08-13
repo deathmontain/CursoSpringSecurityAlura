@@ -1,12 +1,10 @@
-package br.com.jonatas.forum.controller.Dto;
+package br.com.jonatas.forum.controller.dto;
 
 import br.com.jonatas.forum.model.Topico;
 import lombok.Data;
 import org.springframework.data.domain.Page;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
 
 
 @Data

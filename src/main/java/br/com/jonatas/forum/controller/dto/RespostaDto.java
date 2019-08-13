@@ -1,4 +1,4 @@
-package br.com.jonatas.forum.controller.Dto;
+package br.com.jonatas.forum.controller.dto;
 
 import br.com.jonatas.forum.model.Resposta;
 import lombok.Getter;

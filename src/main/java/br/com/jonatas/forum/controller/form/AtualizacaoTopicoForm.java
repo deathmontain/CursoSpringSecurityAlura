@@ -1,4 +1,4 @@
-package br.com.jonatas.forum.controller.Form;
+package br.com.jonatas.forum.controller.form;
 
 import br.com.jonatas.forum.model.Topico;
 import br.com.jonatas.forum.repository.TopicoRepository;
