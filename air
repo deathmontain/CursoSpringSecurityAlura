@@ -1,0 +1,75 @@
+[33mcommit 7809dd077d00deed257f3fdf54f588a48f23708d[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Jônatas Santos <jonatas.santos@zup.com.br>
+Date:   Tue Aug 13 13:39:18 2019 -0300
+
+    Adicionado o pageDefeault
+
+:100644 100644 99c32c7 38d9840 M	src/main/java/br/com/jonatas/forum/controller/TopicosController.java
+
+[33mcommit 72369e20778985ae84dbe6fdb7994cf050c4b10a[m
+Author: Jônatas Santos <jonatas.santos@zup.com.br>
+Date:   Tue Aug 13 12:02:31 2019 -0300
+
+    Refatorado Pageble para simplificacao de codigo
+
+:100644 100644 de70b68 4a6b557 M	src/main/java/br/com/jonatas/forum/ForumApplication.java
+:100644 100644 3ab9aac 99c32c7 M	src/main/java/br/com/jonatas/forum/controller/TopicosController.java
+
+[33mcommit 28103e4e04cea3b19aff26d3c6301d4ab217af5c[m
+Author: Jônatas Santos <jonatas.santos@zup.com.br>
+Date:   Tue Aug 13 11:15:49 2019 -0300
+
+    Adicionado ordenacao do Pageable PageRequest
+
+:100644 100644 764afae 3ab9aac M	src/main/java/br/com/jonatas/forum/controller/TopicosController.java
+:100644 100644 4e08069 baafcf5 R095	src/main/java/br/com/jonatas/forum/controller/Dto/DetalheDoTopicoDto.java	src/main/java/br/com/jonatas/forum/controller/dto/DetalheDoTopicoDto.java
+:100644 100644 80a743e a528788 R092	src/main/java/br/com/jonatas/forum/controller/Dto/RespostaDto.java	src/main/java/br/com/jonatas/forum/controller/dto/RespostaDto.java
+:100644 100644 b706dd1 37eb67c R085	src/main/java/br/com/jonatas/forum/controller/Dto/TopicoDto.java	src/main/java/br/com/jonatas/forum/controller/dto/TopicoDto.java
+:100644 100644 968c500 ad8223f R094	src/main/java/br/com/jonatas/forum/controller/Form/AtualizacaoTopicoForm.java	src/main/java/br/com/jonatas/forum/controller/form/AtualizacaoTopicoForm.java
+:100644 100644 3039528 a78b335 R094	src/main/java/br/com/jonatas/forum/controller/Form/TopicoForm.java	src/main/java/br/com/jonatas/forum/controller/form/TopicoForm.java
+
+[33mcommit aa7ad7acbf46fbcc9a41fd90e5ffa0c6c6568a85[m
+Author: Jônatas Santos <jonatas.santos@zup.com.br>
+Date:   Fri Aug 9 15:24:17 2019 -0300
+
+    Adicionado controle de paginação ao controller lista
+
+:100644 100644 4a05cfd 109f025 M	pom.xml
+:100644 100644 459818e b706dd1 M	src/main/java/br/com/jonatas/forum/controller/Dto/TopicoDto.java
+:100644 100644 e1a44c5 764afae M	src/main/java/br/com/jonatas/forum/controller/TopicosController.java
+:100644 100644 6869869 58e4f36 M	src/main/java/br/com/jonatas/forum/repository/TopicoRepository.java
+
+[33mcommit e098626a2ac249f328acd878bb3bbda809cd9fd0[m
+Author: Jônatas Santos <jonatas.santos@zup.com.br>
+Date:   Fri Aug 2 13:51:06 2019 -0300
+
+    Começando a segunda parte do curso
+
+:000000 100644 0000000 a2a3040 A	.gitignore
+:000000 100644 0000000 72308aa A	.mvn/wrapper/MavenWrapperDownloader.java
+:000000 100644 0000000 01e6799 A	.mvn/wrapper/maven-wrapper.jar
+:000000 100644 0000000 cd0d451 A	.mvn/wrapper/maven-wrapper.properties
+:000000 100644 0000000 8b9da3b A	mvnw
+:000000 100644 0000000 fef5a8f A	mvnw.cmd
+:000000 100644 0000000 4a05cfd A	pom.xml
+:000000 100644 0000000 de70b68 A	src/main/java/br/com/jonatas/forum/ForumApplication.java
+:000000 100644 0000000 011d137 A	src/main/java/br/com/jonatas/forum/config/ErroDeValidacaoHandler.java
+:000000 100644 0000000 ab709d3 A	src/main/java/br/com/jonatas/forum/config/dto/ErroDeFormularioDto.java
+:000000 100644 0000000 4e08069 A	src/main/java/br/com/jonatas/forum/controller/Dto/DetalheDoTopicoDto.java
+:000000 100644 0000000 80a743e A	src/main/java/br/com/jonatas/forum/controller/Dto/RespostaDto.java
+:000000 100644 0000000 459818e A	src/main/java/br/com/jonatas/forum/controller/Dto/TopicoDto.java
+:000000 100644 0000000 968c500 A	src/main/java/br/com/jonatas/forum/controller/Form/AtualizacaoTopicoForm.java
+:000000 100644 0000000 3039528 A	src/main/java/br/com/jonatas/forum/controller/Form/TopicoForm.java
+:000000 100644 0000000 39b7abd A	src/main/java/br/com/jonatas/forum/controller/HelloController.java
+:000000 100644 0000000 e1a44c5 A	src/main/java/br/com/jonatas/forum/controller/TopicosController.java
+:000000 100644 0000000 5008ddf A	src/main/java/br/com/jonatas/forum/model/.DS_Store
+:000000 100644 0000000 7f13443 A	src/main/java/br/com/jonatas/forum/model/Curso.java
+:000000 100644 0000000 9fe3005 A	src/main/java/br/com/jonatas/forum/model/Resposta.java
+:000000 100644 0000000 6b9b185 A	src/main/java/br/com/jonatas/forum/model/StatusTopico.java
+:000000 100644 0000000 44c896a A	src/main/java/br/com/jonatas/forum/model/Topico.java
+:000000 100644 0000000 672a9bb A	src/main/java/br/com/jonatas/forum/model/Usuario.java
+:000000 100644 0000000 fceda77 A	src/main/java/br/com/jonatas/forum/repository/CursoRepository.java
+:000000 100644 0000000 6869869 A	src/main/java/br/com/jonatas/forum/repository/TopicoRepository.java
+:000000 100644 0000000 72a753b A	src/main/resources/application.properties
+:000000 100644 0000000 df55778 A	src/main/resources/data.sql
+:000000 100644 0000000 7bc4ac3 A	src/test/java/br/com/jonatas/forum/ForumApplicationTests.java
