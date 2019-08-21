@@ -20,6 +20,6 @@ public class Perfil implements GrantedAuthority {
 
     @Override
     public String getAuthority() {
-        return null;
+        return nome;
     }
 }
