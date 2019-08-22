@@ -16,14 +16,13 @@ public class TokenService {
     @Value("${forum.jwt.secret}")
     private String secret;
 
-
     public String gerarToken(Authentication authenticate) {
         Usuario logado = (Usuario) authenticate.getPrincipal();
         Date hoje = new Date();
         Date dataExpiracao = new Date(hoje.getTime() + Long.parseLong(expiration));
 
         return Jwts.builder()
-                .setIssuer("Api Forum")
+                .setIssuer("Api Forum Security")
                 .setSubject(logado.getId().toString())
                 .setIssuedAt(hoje)
                 .setExpiration(dataExpiracao)
