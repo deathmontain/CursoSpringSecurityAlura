@@ -1,5 +1,6 @@
 package br.com.jonatas.forum.config.security;
 
+import br.com.jonatas.forum.repository.UsuarioRepository;
 import jdk.nashorn.internal.parser.Token;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -23,6 +24,8 @@ public class ConfiguracaoDeSeguranca extends WebSecurityConfigurerAdapter {
     private AutenticacaoService autenticacaoService;
     @Autowired
     private TokenService tokenService;
+    @Autowired
+    private UsuarioRepository usuarioRepository;
 
     @Override
     @Bean
@@ -46,7 +49,7 @@ public class ConfiguracaoDeSeguranca extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and().addFilterBefore(new AutenticacaoViaTokenFilte(tokenService), UsernamePasswordAuthenticationFilter.class);
+                .and().addFilterBefore(new AutenticacaoViaTokenFilte(tokenService, usuarioRepository), UsernamePasswordAuthenticationFilter.class);
     }
 
     //Configuração de recursos estáticos(js, css, imagens, etc.)

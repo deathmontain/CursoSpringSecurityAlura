@@ -1,5 +1,9 @@
 package br.com.jonatas.forum.config.security;
 
+import br.com.jonatas.forum.model.Usuario;
+import br.com.jonatas.forum.repository.UsuarioRepository;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.servlet.FilterChain;
@@ -10,9 +14,11 @@ import java.io.IOException;
 
 public class AutenticacaoViaTokenFilte extends OncePerRequestFilter {
     private TokenService tokenService;
+    private UsuarioRepository usuarioRepository;
 
-    public AutenticacaoViaTokenFilte(TokenService tokenService) {
+    public AutenticacaoViaTokenFilte(TokenService tokenService, UsuarioRepository usuarioRepository) {
         this.tokenService = tokenService;
+        this.usuarioRepository = usuarioRepository;
     }
 
     @Override
@@ -20,9 +26,19 @@ public class AutenticacaoViaTokenFilte extends OncePerRequestFilter {
                                     FilterChain filterChain) throws ServletException, IOException {
         String token = recuperarToken(httpServletRequest);
         boolean valido = tokenService.isTokenValido(token);
-        System.out.println(valido);
-
+        if (valido){
+            autenticarcliente(token);
+        }
         filterChain.doFilter(httpServletRequest, httpServletResponse);
+    }
+
+    private void autenticarcliente(String token) {
+        Long idUsuario = tokenService.getIdUsuario(token);
+        Usuario usuario = usuarioRepository.findById(idUsuario).get();
+
+        UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(usuario,
+                null, usuario.getAuthorities());
+        SecurityContextHolder.getContext().setAuthentication(authentication);
     }
 
     private String recuperarToken(HttpServletRequest httpServletRequest){
